@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using pax.dsstats.dbng;
@@ -22,7 +23,7 @@ services.AddDbContext<ReplayContext>(options =>
 {
     options
         .UseLoggerFactory(ApplicationLogging.LogFactory)
-        .UseSqlite(@"Data Source=C:\Users\pax77\AppData\Local\Packages\sc2dsstats.maui_veygnay3cpztg\LocalState\dsstats2.db",
+        .UseSqlite(@"Data Source=Database\dsstats2.db",
         x =>
         {
             x.MigrationsAssembly("SqliteMigrations");
@@ -45,7 +46,7 @@ var config = new MapperConfiguration(cfg =>
 });
 var mapper = config.CreateMapper();
 
-var mmrService = new MmrService(context, mapper);
+var mmrService = new FireMmrService(context, mapper);
 
 mmrService.CalcMmmr().GetAwaiter().GetResult();
 
@@ -54,12 +55,13 @@ var dev = await context.Players
     .Select(s => new
     {
         Count = s.Count(),
-        AvgDsr = s.Average(a => Math.Round(a.DsR, 0))
+        AvgDsr = s.Average(a => Math.Round(a.DsR, 0)),
+        Name = s.First().Name,
     }).ToListAsync();
 
 foreach (var d in dev)
 {
-    Console.WriteLine($"{d.Count} => {d.AvgDsr}");
+    Console.WriteLine($"{d.Name} ({d.Count}) => {d.AvgDsr}");
 }
 
 Console.ReadLine();

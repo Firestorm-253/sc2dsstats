@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqliteMigrations", "..\Sqli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sc2dsstats.razorlib", "..\sc2dsstats.razorlib\sc2dsstats.razorlib.csproj", "{2F5378B6-4BC2-4D98-92B3-76C010139A84}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sc2dsstats.test", "..\sc2dsstats.test\sc2dsstats.test.csproj", "{3AFD1BC5-E38C-4DD4-96C6-E1748B970DED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,12 +48,16 @@ Global
 		{2F5378B6-4BC2-4D98-92B3-76C010139A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F5378B6-4BC2-4D98-92B3-76C010139A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F5378B6-4BC2-4D98-92B3-76C010139A84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AFD1BC5-E38C-4DD4-96C6-E1748B970DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AFD1BC5-E38C-4DD4-96C6-E1748B970DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AFD1BC5-E38C-4DD4-96C6-E1748B970DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AFD1BC5-E38C-4DD4-96C6-E1748B970DED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 		SolutionGuid = {E5B426F3-631A-44AF-9904-AF1F5EBDC7FF}
+		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 	EndGlobalSection
 EndGlobal
